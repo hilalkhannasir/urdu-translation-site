@@ -18,7 +18,7 @@ export default function HomePage() {
           EN → UR
         </p>
         <p className="animate-rise animate-delay-1 text-sm text-[var(--ink-soft)]">
-          Vercel-ready · PDF OCR · .txt export
+          Dual models · PDF page picker
         </p>
       </header>
 
@@ -44,17 +44,16 @@ export default function HomePage() {
           English in. Nastaliq Urdu out.
         </h1>
         <p className="animate-rise animate-delay-2 mt-4 max-w-xl text-base leading-7 text-[var(--ink-soft)] sm:text-lg">
-          Paste text, drop a `.txt`, or upload a PDF — we extract English (with OCR
-          when needed), run your chosen model, and hand back downloadable Urdu.
+          Paste text, drop a `.txt`, or upload a PDF — pick the pages you want,
+          extract English (with OCR when needed), then compare NLLB and Qwen side
+          by side with separate downloads.
         </p>
       </section>
 
       <TranslatorMount />
 
       <footer className="relative mx-auto w-full max-w-6xl px-5 pb-10 text-sm text-[var(--ink-soft)] sm:px-8">
-        Models run through the Hugging Face Inference API. Set{" "}
-        <code className="rounded bg-white/60 px-1.5 py-0.5">HF_API_TOKEN</code> in
-        Vercel for higher rate limits.
+
       </footer>
     </main>
   );
