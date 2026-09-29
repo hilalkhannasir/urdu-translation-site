@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #14221f;
+  --ink-soft: #2a3d38;
+  --mist: #d7e4df;
+  --fog: #eef4f1;
+  --panel: rgba(248, 252, 250, 0.82);
+  --panel-strong: #f7fbf9;
+  --line: rgba(20, 34, 31, 0.12);
+  --teal: #1f6f63;
+  --teal-deep: #0f4a42;
+  --brass: #a6792d;
+  --brass-soft: #c9a35a;
+  --danger: #8b3a3a;
+  --shadow: 0 24px 60px rgba(15, 40, 34, 0.14);
+  --radius: 1.25rem;
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-body: "Manrope", "Segoe UI", sans-serif;
+  --font-urdu: "Noto Nastaliq Urdu", "Noto Naskh Arabic", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  color: var(--ink);
+  font-family: var(--font-body);
+  background:
+    radial-gradient(1200px 700px at 12% -10%, rgba(31, 111, 99, 0.22), transparent 55%),
+    radial-gradient(900px 600px at 88% 8%, rgba(166, 121, 45, 0.18), transparent 50%),
+    linear-gradient(165deg, #e8f1ed 0%, #d5e3de 42%, #c7d8d2 100%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(rgba(20, 34, 31, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 34, 31, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black 35%, transparent 85%);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(31, 111, 99, 0.25);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes brand-in {
+  from {
+    opacity: 0;
+    letter-spacing: 0.18em;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    letter-spacing: 0.04em;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wash {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(2%, -1%, 0) scale(1.03);
+  }
+}
+
+.animate-rise {
+  animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-brand {
+  animation: brand-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-delay-1 {
+  animation-delay: 0.12s;
+}
+
+.animate-delay-2 {
+  animation-delay: 0.24s;
+}
+
+.animate-delay-3 {
+  animation-delay: 0.36s;
+}
+
+.bg-wash {
+  animation: wash 18s ease-in-out infinite;
+}
+
+.urdu-text {
+  font-family: var(--font-urdu);
+  direction: rtl;
+  text-align: right;
+  line-height: 2.1;
+  font-size: 1.35rem;
+}
